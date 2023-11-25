@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>User Profile</title>
+    <style>
+body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+.login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+ button {
+            width: 100%;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #fff;
+            font-size: 16px;
+        }
+</style>
+</head>
+<body>
+<div class="login-container">
+    <h2>User Profile</h2>
+    <div>
+        <h3>Book Search</h3>
+        <form id="book-search-form">
+            <label for="book-title">Book Title:</label>
+            <input type="text" id="book-title" name="book-title"><br>
+	    <br>
+            <a href="search.html"><button type="button" onclick="searchBooks()">Search</button><br></a>
+	    <br>
+        </form>
+        <div id="search-results"></div>
+    </div>
+    <div>
+        <h3>Check Fine</h3>
+        <p>Your current fine: Rs.<span id="display-fine">0.00</span></p>
+        <button type="button" onclick="checkFine()">Check Fine</button>
+    </div>
+    <div>
+        <h3>Download Materials</h3>
+        <button type="button" onclick="downloadMaterials()">Download Materials</button>
+    </div>
+
+    <script>
+        function searchBooks() {
+            var bookTitle = document.getElementById('book-title').value;
+            document.getElementById('search-results').innerHTML = `Search results for "${bookTitle}"`;
+        }
+        function checkFine() {
+            var fineAmount = 5.00;
+            document.getElementById('display-fine').textContent = fineAmount.toFixed(2);
+        }
+        function downloadMaterials() {
+            alert("Downloading materials... (Placeholder function)");
+        }
+        });
+    </script>
+</div>
+</body>
+</html>
